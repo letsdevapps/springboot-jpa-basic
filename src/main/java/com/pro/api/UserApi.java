@@ -19,7 +19,7 @@ public class UserApi {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping({"", "/"})
+	@GetMapping({ "", "/" })
 	public List<User> findAll() {
 		return userService.findAll();
 	}
@@ -27,5 +27,10 @@ public class UserApi {
 	@PostMapping("/save")
 	public void save(@RequestBody User user) {
 		userService.save(user);
+	}
+
+	@GetMapping("/users/older-than-18")
+	public List<User> getUsersOlderThan18() {
+		return userService.getUsersOlderThan18();
 	}
 }

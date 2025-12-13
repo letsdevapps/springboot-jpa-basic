@@ -1,5 +1,7 @@
 package com.pro.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -10,7 +12,7 @@ import lombok.Setter;
 @Data
 public class User {
 
-	@Id
+    @Id
     @Getter
     @Setter
     private Long id;
@@ -20,4 +22,7 @@ public class User {
     @Getter
     @Setter
     private String email;
+    @Getter
+    @Setter
+    private LocalDate birthDate;
 }
