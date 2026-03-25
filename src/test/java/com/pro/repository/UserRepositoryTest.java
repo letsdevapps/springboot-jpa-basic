@@ -22,7 +22,7 @@ class UserRepositoryTest {
     @Test
     void deveSalvarEBuscarUsuario() {
         // Arrange
-        User user = new User(1L, "João da Silva", "joao.silva@exemplo.com", null);
+        User user = new User("João da Silva", "joao.silva@exemplo.com", null);
         
         // Act
         userRepository.save(user);

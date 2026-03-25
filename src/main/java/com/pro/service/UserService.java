@@ -20,6 +20,11 @@ public class UserService {
 	}
 
 	public void save(User user) {
+		// Validação de idade mínima 18 anos
+		if (user.getBirthDate().isAfter(LocalDate.now().minusYears(18))) {
+			throw new RuntimeException("Usuário deve ter pelo menos 18 anos");
+		}
+
 		userRepository.save(user);
 	}
 
