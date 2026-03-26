@@ -1,16 +1,16 @@
 Item para Http Post raw com Json
 
 {
-  "id": 1,
   "name": "João da Silva",
-  "email": "joao.silva@exemplo.com"
+  "email": "joao.silva@exemplo.com",
+  "birthDate": "1990/01/01"
 }
 
 Outro item
 
 {
-  "id": 2,
   "name": "Carlos Souza",
-  "email": "carlos.souza@exemplo.com"
+  "email": "carlos.souza@exemplo.com",
+  "birthDate": "2000/01/01"
 }
 

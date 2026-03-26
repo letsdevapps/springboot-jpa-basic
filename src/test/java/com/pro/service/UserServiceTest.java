@@ -25,7 +25,7 @@ class UserServiceTest {
 
     @Test
     void deveRetornarListaDeUsuarios() {
-        List<User> users = List.of(new User(null, "Ana", null, null));
+        List<User> users = List.of(new User("Ana", null, null));
 
         when(userRepository.findAll()).thenReturn(users);
 
@@ -37,7 +37,7 @@ class UserServiceTest {
 
     @Test
     void deveSalvarUsuario() {
-        User user = new User(null, "Ana", null, null);
+        User user = new User("Ana", null, null);
 
         userService.save(user);
 
