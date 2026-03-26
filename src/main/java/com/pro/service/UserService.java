@@ -2,6 +2,7 @@ package com.pro.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,13 +20,27 @@ public class UserService {
 		return userRepository.findAll();
 	}
 
-	public void save(User user) {
+	public Optional<User> findById(Long id) {
+		return userRepository.findById(id);
+	}
+
+	public User saveAndUpdate(User user) {
 		// Validação de idade mínima 18 anos
 		if (user.getBirthDate().isAfter(LocalDate.now().minusYears(18))) {
 			throw new RuntimeException("Usuário deve ter pelo menos 18 anos");
 		}
 
-		userRepository.save(user);
+		return userRepository.save(user);
+	}
+
+	public Boolean delete(User user) {
+		try {
+			userRepository.delete(user);
+		} catch (Exception e) {
+			return false;
+		}
+
+		return true;
 	}
 
 	public List<User> getUsersOlderThan18() {
