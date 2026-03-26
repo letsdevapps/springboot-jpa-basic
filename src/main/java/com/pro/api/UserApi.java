@@ -30,7 +30,6 @@ public class UserApi {
 	@PostMapping
 	public void createUser(@RequestBody(required = true) @Valid User user) {
 		// required ja esta sempre true por padrão, coloquei apenas pra lembrar
-
 		userService.save(user);
 	}
 
